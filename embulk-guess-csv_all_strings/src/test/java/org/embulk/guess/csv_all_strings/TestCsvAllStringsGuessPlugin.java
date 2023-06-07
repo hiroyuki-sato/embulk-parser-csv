@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.embulk.guess.csv;
+package org.embulk.guess.csv_all_strings;
 
 import static org.junit.Assert.assertEquals;
 

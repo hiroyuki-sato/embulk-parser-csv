@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-package org.embulk.guess.csv;
+package org.embulk.guess.csv_all_strings;
 
+import java.util.List;
 import org.embulk.config.ConfigDiff;
+import org.embulk.config.ConfigSource;
+import org.embulk.guess.csv.CsvGuessPlugin;
+import org.embulk.spi.BufferAllocator;
 import org.embulk.util.guess.GuesstimatedType;
 
 public class CsvAllStringsGuessPlugin extends CsvGuessPlugin {
@@ -26,5 +30,10 @@ public class CsvAllStringsGuessPlugin extends CsvGuessPlugin {
         column.set("name", name);
         column.set("type", "string");
         return column;
+    }
+
+    @Override
+    protected ConfigDiff guessLines(final ConfigSource config, final List<String> sampleLines, final BufferAllocator bufferAllocator) {
+        return super.guessLines(config, sampleLines, bufferAllocator);
     }
 }
