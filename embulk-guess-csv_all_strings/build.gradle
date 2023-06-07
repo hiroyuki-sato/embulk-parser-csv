@@ -58,7 +58,7 @@ dependencies {
 }
 
 embulkPlugin {
-    mainClass = "org.embulk.guess.csv.CsvAllStringsGuessPlugin"
+    mainClass = "org.embulk.guess.csv_all_strings.CsvAllStringsGuessPlugin"
     category = "guess"
     type = "csv_all_strings"
 }

@@ -68,7 +68,7 @@ public class CsvGuessPlugin implements GuessPlugin {
         return this.guessLines(config, LineGuessHelper.of(CONFIG_MAPPER_FACTORY).toLines(config, sample), bufferAllocator);
     }
 
-    ConfigDiff guessLines(final ConfigSource config, final List<String> sampleLines, final BufferAllocator bufferAllocator) {
+    protected ConfigDiff guessLines(final ConfigSource config, final List<String> sampleLines, final BufferAllocator bufferAllocator) {
         final ConfigDiff configDiff = newConfigDiff();
 
         // return {} unless config.fetch("parser", {}).fetch("type", "csv") == "csv"
