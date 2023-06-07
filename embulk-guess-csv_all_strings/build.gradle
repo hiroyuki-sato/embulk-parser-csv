@@ -34,10 +34,10 @@ java {
 }
 
 dependencies {
-    compileOnly "org.embulk:embulk-spi:0.10.44"
+    compileOnly "org.embulk:embulk-spi:0.11"
     compileOnly "org.slf4j:slf4j-api:2.0.7"
 
-    implementation project(":embulk-guess-csv")
+    implementation rootProject
     implementation "org.embulk:embulk-util-config:0.3.3"
     implementation "org.embulk:embulk-util-guess:0.3.1"
 
@@ -48,13 +48,13 @@ dependencies {
     testImplementation "org.embulk:embulk-junit4:0.10.44"
     testImplementation "com.google.guava:guava:18.0"
 
-    testImplementation project(":embulk-formatter-csv")
-    testImplementation project(":embulk-input-file")
-    testImplementation project(":embulk-output-file")
-    testImplementation project(":embulk-parser-csv")
-    testImplementation project(":embulk-guess-bzip2")
-    testImplementation project(":embulk-guess-gzip")
-    testImplementation project(":embulk-guess-json")
+    testImplementation "org.embulk:embulk-formatter-csv:0.10.42"
+    testImplementation "org.embulk:embulk-input-file:0.10.42"
+    testImplementation "org.embulk:embulk-output-file:0.10.42"
+    testImplementation "org.embulk:embulk-parser-csv:0.10.42"
+    testImplementation "org.embulk:embulk-guess-bzip2:0.10.42"
+    testImplementation "org.embulk:embulk-guess-gzip:0.10.42"
+    testImplementation "org.embulk:embulk-guess-json:0.10.42"
 }
 
 embulkPlugin {
@@ -90,10 +90,8 @@ javadocJar {
 publishing {
     publications {
          maven(MavenPublication) {
-            afterEvaluate { project ->
-                groupId = project.group
-                artifactId = project.name
-            }
+            groupId = project.group
+            artifactId = project.name
 
             from components.java
              // javadocJar and sourcesJar are added by java.withJavadocJar() and java.withSourcesJar() above.
@@ -102,10 +100,8 @@ publishing {
             pom {  // https://central.sonatype.org/pages/requirements.html
                 packaging "jar"
 
-                afterEvaluate { project ->
-                    name = project.name
-                    description = project.description
-                }
+                name = project.name
+                description = project.description
                 url = "https://www.embulk.org/"
 
                 licenses {
@@ -120,14 +116,14 @@ publishing {
                 developers {
                     developer {
                         name = "Dai MIKURUBE"
-                        email = "dmikurube@treasure-data.com"
+                        email = "dmikurube@acm.org"
                     }
                 }
 
                 scm {
-                    connection = "scm:git:git://github.com/embulk/embulk-standards.git"
-                    developerConnection = "scm:git:git@github.com:embulk/embulk-standards.git"
-                    url = "https://github.com/embulk/embulk-standards"
+                    connection = "scm:git:git://github.com/embulk/embulk-guess-csv.git"
+                    developerConnection = "scm:git:git@github.com:embulk/embulk-guess-csv.git"
+                    url = "https://github.com/embulk/embulk-guess-csv"
                 }
             }
         }
