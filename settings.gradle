@@ -1,1 +1,3 @@
 rootProject.name = "embulk-parser-csv"
+include "embulk-guess-csv"
+include "embulk-guess-csv_all_strings"

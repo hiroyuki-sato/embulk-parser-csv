@@ -1,4 +1,4 @@
-# embulk-parser-csv
+# embulk-parser-csv / embulk-guess-csv / embulk-guess-csv_all_strings
 
 This is one of Embulk's "standard" plugins that are embedded in Embulk's executable binary distributions.
 
