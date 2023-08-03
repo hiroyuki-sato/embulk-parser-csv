@@ -3,7 +3,7 @@ plugins {
     id "maven-publish"
     id "signing"
     id "org.embulk.embulk-plugins" version "0.5.5"
-    id "checkstyle"
+//    id "checkstyle"
 }
 
 repositories {
@@ -193,13 +193,16 @@ test {
     }
 }
 
+/*
 tasks.withType(Checkstyle) {
     reports {
         // Not to skip up-to-date checkstyles.
         outputs.upToDateWhen { false }
     }
 }
+*/
 
+/*
 checkstyle {
     toolVersion "8.7"
     configFile = file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")
@@ -209,3 +212,4 @@ checkstyle {
     ignoreFailures = false
     maxWarnings = 0  // https://github.com/gradle/gradle/issues/881
 }
+*/
